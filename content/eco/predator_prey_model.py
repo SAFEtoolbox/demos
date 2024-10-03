@@ -4,7 +4,8 @@ This function is a Python implementation of the predator prey model
 @author: Andres Peñuela andres.penuela-fernandez@bristol.ac.uk, penyuela@gmail.com
 """
 import numpy as np
-from numba import njit # the function jit allows to compile the code and reduced
+
+# from numba import njit # the function jit allows to compile the code and reduced
 
 class predator:
     def __init__(self,ini = 1, attack_rate = 0.5, death_rate = 0.7, efficiency_rate = 1.6):
@@ -82,7 +83,7 @@ def model(param,T):
     return predator_pop,prey_pop
 
 
-@njit(parallel = False) # Numba decorator to speed-up the function below
+# @njit(parallel = False) # Numba decorator to speed-up the function below
 def function(param,T,equil_value):
     # predetor
     predator_ini      = param[0]
