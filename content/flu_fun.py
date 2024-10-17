@@ -24,7 +24,7 @@ dRI / dt = γS
 """
 from scipy.integrate import odeint
 import numpy as np
-from numba import njit # the function jit allows to compile the code and reduced
+#from numba import njit # the function jit allows to compile the code and reduced
 
 class population:
     
@@ -56,7 +56,7 @@ def simulation(t,population, contact, contagion, recovery, vaccination):
     
     return S, RI, V
 
-@njit(parallel = False) # Numba decorator to speed-up the function below
+#@njit(parallel = False) # Numba decorator to speed-up the function below
 def model(param,t,N):
     RI_0 = param[0]
     S_0 = 1
@@ -98,7 +98,7 @@ def model(param,t,N):
         
     return S, RI, V,max_value,total_cost
 
-@njit(parallel = False) # Numba decorator to speed-up the function below        
+#@njit(parallel = False) # Numba decorator to speed-up the function below        
 def function(param,t,N,output):
     RI_0 = param[0]
     S_0 = 1
